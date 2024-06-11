@@ -1,6 +1,4 @@
 const express = require('express');
-const helmet = require('helmet');
-
 const app = express(); // initialize server app with express
 app.use(express.json()); // allow server to receive json data
 
@@ -9,7 +7,7 @@ app.use((req, res, next) => {
    res.setHeader('Access-Control-Allow-Origin', '*');
    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-   res.setHeader("Content-Security-Policy", "default-src 'self'; font-src 'self' https://fonts.gstatic.com;");
+   res.setHeader("Content-Security-Policy", "default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline';");
    next();
 });
 
