@@ -1,16 +1,19 @@
 {
   "name": "cryptodotcom-exchange",
   "version": "0.1.0",
+  "author": "Danio Fiore",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
+    "mongoose": "^8.4.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
