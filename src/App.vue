@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/> -->
+  <!-- TODO: check why the HomeView component is not visible -->
   <div>
     <HomeView />
   </div>
