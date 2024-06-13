@@ -5,6 +5,11 @@
 npm install
 ```
 
+### For vue
+```
+npm run serve
+```
+
 ### Compiles and hot-reloads for development
 ```
 nodemon server.js
@@ -13,11 +18,6 @@ nodemon server.js
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
 
 ###  start Tailwind
