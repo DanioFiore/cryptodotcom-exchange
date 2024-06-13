@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 // eslint-disable-next-line no-unused-vars
 const connectDB = async (DATABASE_URL) => {
     try {
@@ -11,3 +11,5 @@ const connectDB = async (DATABASE_URL) => {
         console.log(error);
     }
 }
+
+module.exports = connectDB;
