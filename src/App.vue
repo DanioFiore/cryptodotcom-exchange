@@ -1,18 +1,17 @@
 <template>
-  hello
   <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/> -->
   <div>
-    <HomePage />
+    <HomeView />
   </div>
 </template>
 
 <script>
   // eslint-disable-next-line no-unused-vars
-  import HomePage from './components/HomePage.vue';
+  import HomeView from './views/HomeView.vue';
   export default {
     name: 'App'
   }
