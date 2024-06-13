@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express(); // initialize server app with express
+const connectDB = require('./db/db.js');
+const web = require('./routes/web.js');
 app.use(express.json()); // allow server to receive json data
-
+app.use('/api', web);
 // cors
 app.use((req, res, next) => {
    res.setHeader('Access-Control-Allow-Origin', '*');
@@ -11,15 +13,9 @@ app.use((req, res, next) => {
    next();
 });
 
-// routes
-app.get('/', async (req, res) => {
-   try {
-      res.sendStatus(200);
-   } catch (error) {
-      console.log(error);
-      res.sendStatus(500);
-   }
-});
-
 const PORT = process.env.PORT || 3100;
+const DATABASE_URL = process.env.DATABASE_URL;
+
+// db connection
+connectDB(DATABASE_URL);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

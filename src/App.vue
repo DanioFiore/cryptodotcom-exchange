@@ -1,10 +1,22 @@
 <template>
-  <nav>
+  hello
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <router-view/>
+  <router-view/> -->
+  <div>
+    <HomePage />
+  </div>
 </template>
+
+<script>
+  // eslint-disable-next-line no-unused-vars
+  import HomePage from './components/HomePage.vue';
+  export default {
+    name: 'App'
+  }
+</script>
 
 <style>
 #app {
