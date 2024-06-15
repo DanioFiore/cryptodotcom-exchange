@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express(); // initialize server app with express
-const connectDB = require('./db/db.js');
 const web = require('./routes/web.js');
 app.use(express.json()); // allow server to receive json data
 app.use('/api', web);
@@ -13,9 +12,6 @@ app.use((req, res, next) => {
    next();
 });
 
-const PORT = process.env.PORT || 3100;
-const DATABASE_URL = process.env.DATABASE_URL;
+const PORT = process.env.NODE_DOCKER_PORT || 3100;
 
-// db connection
-connectDB(DATABASE_URL);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
