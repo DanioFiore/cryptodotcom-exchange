@@ -1,14 +1,16 @@
-const mongoose = require("mongoose");
-// eslint-disable-next-line no-unused-vars
-const connectDB = async (DATABASE_URL) => {
+const mongoose = require('mongoose');
+
+const connectDB = async () => {
     try {
-        const DB_OPTIONS = {
-            dbName: 'cryptodotcom'
-        }
-        await mongoose.connect(DATABASE_URL, DB_OPTIONS);
-        console.log('Connected to DB');
+        // mongodb://<username>:<password>@<container-name>:27017
+        await mongoose.connect('mongodb://root:root@mongo_db:27017', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("MongoDB Connected");
     } catch (error) {
         console.log(error);
+        process.exit(1);
     }
 }
 

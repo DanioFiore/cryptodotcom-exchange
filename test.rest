@@ -1,0 +1,7 @@
+@contentType = application/json
+# @httpVersion = HTTP/1.1
+
+###
+GET http://localhost:3100/
+Content-Type: {{contentType}}
+###

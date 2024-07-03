@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express(); // initialize server app with express
-const connectDB = require('./db/db.js');
-const web = require('./routes/web.js');
+const helmet = require('helmet');
+const UsersRoutes = require('./routes/Users');
+
+
+
+
+
 app.use(express.json()); // allow server to receive json data
-app.use('/api', web);
+
 // cors
 app.use((req, res, next) => {
    res.setHeader('Access-Control-Allow-Origin', '*');
@@ -13,9 +18,12 @@ app.use((req, res, next) => {
    next();
 });
 
-const PORT = process.env.PORT || 3100;
-const DATABASE_URL = process.env.DATABASE_URL;
+// SET SECURITY HEADERS
+app.use(helmet());
 
-// db connection
-connectDB(DATABASE_URL);
+// routes
+app.use('/api/v1/users', UsersRoutes);
+
+const PORT = process.env.NODE_DOCKER_PORT || 3100;
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
