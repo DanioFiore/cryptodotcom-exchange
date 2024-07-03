@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  mongodb:
+  mongo_db:
     # container_name: mongo_db_container
     image: mongo:latest
     restart: always
@@ -12,13 +12,13 @@ services:
     ports:
     - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
     volumes:
-      - db:/data/db
+      - mongo-data:/data/db
     networks:
-      - backend
+      - server
 
-  node-api:
+  server:
     depends_on:
-      - mongodb
+      - mongo_db
     build: 
       context: ./
       dockerfile: Dockerfile_node
@@ -34,10 +34,10 @@ services:
       - DB_PORT=$MONGODB_DOCKER_PORT
       - CLIENT_ORIGIN=$CLIENT_ORIGIN
     networks:
-      - backend
+      - server
 
 volumes:
-  db: {}
+  mongo-data:
 
 networks:
-  backend:
+  server:
