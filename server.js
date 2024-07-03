@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(); // initialize server app with express
 const helmet = require('helmet');
-const UsersRoutes = require('./routes/Users');
+const UsersRoutes = require('./routes/UsersRoutes');
 
 
 
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(helmet());
 
 // routes
-app.use('/api/v1/users', UsersRoutes);
+app.use('/api/users', UsersRoutes);
 
 const PORT = process.env.NODE_DOCKER_PORT || 3100;
 

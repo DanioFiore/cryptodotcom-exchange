@@ -9,9 +9,8 @@ const UsersController = require('../controllers/UsersController.js');
  */
 const router = express.Router({ mergeParams: true });
 
-router.get('/users', UsersController.getAllUsers);
 router
-  .route('/')
+  .route('/api/users')
   .get(UsersController.getAllUsers);
 
 module.exports = router;

@@ -2,6 +2,6 @@
 # @httpVersion = HTTP/1.1
 
 ###
-GET http://localhost:3100/
+GET http://localhost:3100/api/users
 Content-Type: {{contentType}}
 ###
