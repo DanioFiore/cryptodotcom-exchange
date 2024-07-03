@@ -1,20 +1,11 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/> -->
-  <!-- TODO: check why the HomeView component is not visible -->
-  <div>
-    <HomeView />
-  </div>
+  <router-view/>
 </template>
 
 <script>
   // eslint-disable-next-line no-unused-vars
-  import HomeView from './views/HomeView.vue';
   export default {
-    name: 'App'
+    name: 'App',
   }
 </script>
 
@@ -25,18 +16,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(); // initialize server app with express
 const helmet = require('helmet');
-const UsersRoutes = require('./routes/UsersRoutes');
+const UsersRoutes = require('./routes/Users');
 
 
 
