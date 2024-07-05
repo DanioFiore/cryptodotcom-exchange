@@ -3,9 +3,10 @@ const app = express(); // initialize server app with express
 const helmet = require('helmet');
 const UsersRoutes = require('./routes/UsersRoutes');
 
-
-
-
+process.on('uncaughtException', err => {
+   console.log(err);
+   process.exit(1);
+});
 
 app.use(express.json()); // allow server to receive json data
 
@@ -26,4 +27,11 @@ app.use('/api/users', UsersRoutes);
 
 const PORT = process.env.NODE_DOCKER_PORT || 3100;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+process.on('unhandledRejection', err => {
+   server.close(() => {
+      console.log(err);
+      process.exit(1);
+   });
+});

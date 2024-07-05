@@ -10,7 +10,7 @@ const UsersController = require('../controllers/UsersController.js');
 const router = express.Router({ mergeParams: true });
 
 router
-  .route('/api/users')
+  .route('/')
   .get(UsersController.getAllUsers);
 
 module.exports = router;
