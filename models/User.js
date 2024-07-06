@@ -14,18 +14,30 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: 8,
+        select: false
+    },
+    active: {
+        type: Boolean,
+        default: true,
+        select: false
     },
     createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    updatedAt: {
         type: Date,
         default: Date.now
     }
 })
 
-const UsersModel = mongoose.model("user", userSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports = UsersModel;
+module.exports = User;
