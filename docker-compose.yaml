@@ -33,6 +33,8 @@ services:
       - DB_NAME=$MONGODB_DATABASE
       - DB_PORT=$MONGODB_DOCKER_PORT
       - CLIENT_ORIGIN=$CLIENT_ORIGIN
+    volumes:
+      - .:/usr/src/app
     networks:
       - server
 

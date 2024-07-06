@@ -9,7 +9,6 @@ const UsersController = require('../controllers/UsersController.js');
  */
 const router = express.Router({ mergeParams: true });
 
-router.get('/users', UsersController.getAllUsers);
 router
   .route('/')
   .get(UsersController.getAllUsers);
