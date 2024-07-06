@@ -2,6 +2,9 @@ const express = require('express');
 const app = express(); // initialize server app with express
 const helmet = require('helmet');
 const UsersRoutes = require('./routes/UsersRoutes');
+const connectDB = require('./db/db');
+
+connectDB();
 
 process.on('uncaughtException', err => {
    console.log(err);
