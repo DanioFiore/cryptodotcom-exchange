@@ -1,5 +1,5 @@
-const express = require('express');
-const UsersController = require('../controllers/UsersController.js');
+import express from 'express';
+import UsersController from '../controllers/UsersController';
 
 /**
  * By default, every router have access to params of their specific route. With

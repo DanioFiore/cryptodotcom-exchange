@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 const app = express(); // initialize server app with express
-const helmet = require('helmet');
-const UsersRoutes = require('./routes/UsersRoutes');
-const connectDB = require('./db/db');
+import helmet from 'helmet';
+import UsersRoutes from './routes/UsersRoutes';
+import connectDB from './db/db';
 
 connectDB();
 
